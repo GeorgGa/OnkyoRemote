@@ -24,7 +24,9 @@ jobs:
       run: cargo test --release
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
-      path: ./target/release/onkyo
+      with:
+        name: onkyo
+        path: ./target/release/onkyo
         
   deploy:
     runs-on: ubuntu-latest
