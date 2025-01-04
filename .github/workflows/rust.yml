@@ -23,12 +23,12 @@ jobs:
       working-directory: ./onkyo
       run: cargo test --release
     - name: List Artifacts
-      run: ls ./target/release/; ls ./target/release/onkyo
+      run: ls /home/runner/work/OnkyoRemote/OnkyoRemote/; ls /home/runner/work/OnkyoRemote/OnkyoRemote/onkyo
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
         name: onkyo
-        path: /target/release/
+        path: /home/runner/work/OnkyoRemote/OnkyoRemote/
         
   deploy:
     runs-on: ubuntu-latest
@@ -39,7 +39,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: onkyo
-          path: ./target/release/onkyo
+          path: /home/runner/work/OnkyoRemote/OnkyoRemote/onkyo
 
       - name: List Artifacts
-        run: ls ./target/release/onkyo
+        run: ls /home/runner/work/OnkyoRemote/OnkyoRemote/
