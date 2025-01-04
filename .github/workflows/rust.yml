@@ -21,7 +21,7 @@ jobs:
       run: cargo build --release
     - name: Run tests
       working-directory: ./onkyo
-      run: cargo test --releas
+      run: cargo test --release
     - name: List Artifacts
       run: ls ./target/release/; ls ./target/release/onkyo
     - name: Upload Artifact
